@@ -1,12 +1,19 @@
 import { afterNextRender, afterRender, ApplicationRef, ChangeDetectionStrategy, Component, computed, createComponent, effect, ElementRef, EnvironmentInjector, inject, Injector, IterableChangeRecord, IterableDiffers, model, SecurityContext, untracked, ViewEncapsulation } from '@angular/core';
 
-import { map as initializeMap, LayerGroup, layerGroup, LeafletMouseEvent, Map as LeafletMap, Marker, marker, tileLayer, LatLngBounds } from 'leaflet';
+import { map as initializeMap, LayerGroup, layerGroup, LeafletMouseEvent, Map as LeafletMap, Marker, marker, tileLayer, LatLngBounds, icon } from 'leaflet';
 import { DomSanitizer } from '@angular/platform-browser';
 import { EditableQuery } from '../../model/editable-query';
 import { MapTooltipComponent } from '../../components/map-tooltip/map-tooltip.component';
 import VacationPlannerComponent from '../vacation-planner/vacation-planner.component';
 
 const state = Symbol('markerState');
+
+// BUG https://github.com/Leaflet/Leaflet/issues/4968
+Marker.prototype.options.icon = icon({
+	iconRetinaUrl: 'media/marker-icon-2x.png',
+	iconUrl: 'media/marker-icon.png',
+	shadowUrl: 'media/marker-shadow.png',
+});
 
 @Component({
 	selector: 'app-map-planner',
