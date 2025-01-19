@@ -1,0 +1,37 @@
+:host {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: auto 1fr;
+}
+
+app-map-planner {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  flex-grow: 1;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 12px;
+  background-color: var(--mat-sys-surface-container);
+  color: var(--mat-sys-on-surface);
+
+  height: 66px;
+  box-sizing: border-box;
+  display: flex;
+
+  h1 {
+    margin: 0;
+    margin-inline-end: auto;
+  }
+}
+
+app-list-planner {
+  z-index: 0;
+}

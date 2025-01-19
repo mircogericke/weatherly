@@ -1,0 +1,20 @@
+<div>
+	<header>
+		<h1>Weatherly</h1>
+		<nav>
+			<mat-button-toggle-group name="activeView" aria-label="Active View" [value]="view()" (valueChange)="navigate($event)">
+				<mat-button-toggle value="/"><mat-icon>map</mat-icon></mat-button-toggle>
+				<mat-button-toggle value="/chart" [disabled]="!viewState()"><mat-icon>show_chart</mat-icon></mat-button-toggle>
+			</mat-button-toggle-group>
+		</nav>
+	</header>
+	<app-list-planner [(state)]="editState"/>
+</div>
+
+<router-outlet/>
+<!-- <app-map-planner [(state)]="editState"/>
+@if(viewState(); as state) {
+	<app-weather-view [queries]="state"/>
+} -->
+
+<!--  -->

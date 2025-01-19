@@ -1,0 +1,41 @@
+<form ngNoForm class="weatherly-form">
+	<ol>
+		@for (query of state(); track query.id) {
+			<li class="form-row">
+				<div class="input-row">
+					<mat-form-field [floatLabel]="'always'">
+						<mat-label>Location</mat-label>
+						<input matInput [placeholder]="query.geocode()" [(ngModel)]="query.name">
+					</mat-form-field>
+	
+					<mat-form-field [floatLabel]="'always'">
+						<mat-label>Start</mat-label>
+						<input matInput [matDatepicker]="pickerStart" [(ngModel)]="query.startDate">
+						<mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
+						<mat-datepicker #pickerStart></mat-datepicker>
+					</mat-form-field>
+	
+					<mat-form-field [floatLabel]="'always'">
+						<mat-label>End</mat-label>
+						<input matInput [matDatepicker]="pickerEnd" [(ngModel)]="query.endDate">
+						<mat-datepicker-toggle matIconSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+						<mat-datepicker #pickerEnd></mat-datepicker>
+					</mat-form-field>
+					<button mat-icon-button aria-label="Remove" type="button" (click)="remove($index)">
+						<mat-icon>remove</mat-icon>
+					</button>
+				</div>
+			</li>
+		}
+	</ol>
+
+	<div class="description">
+		@if (!state().length) {
+			<h2>Nothing here yet</h2>
+		}
+		<p>
+			This is were you configure the dates for each location.<br>
+			To add a location simply click on the map.
+		</p>
+</div>
+</form>

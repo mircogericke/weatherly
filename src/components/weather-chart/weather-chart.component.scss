@@ -1,0 +1,21 @@
+:host {
+	display: flex;
+	flex-direction: column;
+	min-height: 150px;
+	width: 100%;
+	align-items: center;
+}
+
+:host::ng-deep {
+	.swimlane text {
+		text-anchor: middle;
+	}
+
+	text {
+		fill: var(--mat-sys-on-background);
+	}
+}
+
+h1 {
+	text-align: center;
+}

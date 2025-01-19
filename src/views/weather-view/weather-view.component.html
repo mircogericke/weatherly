@@ -1,0 +1,20 @@
+<div class="chart-sidebar">
+	<mat-checkbox [(ngModel)]="showMinMax">Show Min/Max</mat-checkbox>
+	<mat-checkbox [(ngModel)]="showNight">Show Nights</mat-checkbox>
+</div>
+
+@if (data(); as d) {
+	<app-weather-chart
+		[range]="range()"
+		[query]="queries()"
+		[data]="d"
+		[width]="width()"
+		[showNight]="showNight()"
+		[showMinMax]="showMinMax()"
+		/>
+
+
+	<div class="attribution">
+		Data by <a href="https://open-meteo.com/">Open-Meteo</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+	</div>
+}

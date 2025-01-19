@@ -1,0 +1,13 @@
+@import 'leaflet/dist/leaflet.css';
+
+.leaflet-grab {
+  cursor: default !important;
+}
+
+app-map-planner {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  flex-grow: 1;
+}

@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.chart-sidebar {
+  background: var(--mat-sys-surface-container);
+  color: var(--mat-sys-on-surface);
+  height: 66px;
+
+  display: flex;
+  align-items: center;
+  padding-inline: 12px;
+
+
+  :first-child {
+    margin-inline-start: auto;
+  }
+}
+
+.attribution {
+  font-size: 0.7em;
+  color: oklch(from #e0e3e2 calc(l * 0.8) c h);
+  text-align: end;
+  padding-inline: 12px;
+}
